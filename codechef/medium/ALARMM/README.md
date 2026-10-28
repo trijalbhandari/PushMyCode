@@ -70,7 +70,7 @@ Output
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-10-28T15:35:10.400Z  
+**Submitted:** 2026-10-28T15:37:30.393Z  
 
 ```c_cpp
 #include <bits/stdc++.h>
@@ -78,7 +78,29 @@ using namespace std;
 
 int main() {
 	// your code goes here
+int T;
+cin>>T;
+while (T--){
+    int N,K;
+    string S;
+    cin>>N>>K>>S;
+    int alarms = 0;
+        int i = 0;
 
+        while (i < N) {
+            if (S[i] == '1') {
+                int alarmRoom = min(N - 1, i + K);
+                ++alarms;
+                i = alarmRoom + 1;
+            } else {
+                ++i;
+            }
+        }
+
+        cout << alarms << '\n';
+    }
+
+    return 0;
 }
 
 ```
