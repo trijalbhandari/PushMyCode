@@ -66,7 +66,7 @@ BBBBAAAAABBBBBBB
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-10-28T15:29:06.410Z  
+**Submitted:** 2026-10-28T15:33:50.925Z  
 
 ```c_cpp
 #include <bits/stdc++.h>
@@ -74,7 +74,36 @@ using namespace std;
 
 int main() {
 	// your code goes here
+int T;
+cin>>T;
+while (T--){
+    int N;
+    string S;
+    cin>>N>>S;
+    
+        int streak = 0;
+        int opened = 0;
+        char last = '\0';
 
+        for (char button : S) {
+            if (button == last) {
+                ++streak;
+            } else {
+                last = button;
+                streak = 1;
+            }
+
+            if (streak == 3) {
+                ++opened;
+                streak = 0;
+                last = '\0';
+            }
+        }
+
+        cout << opened << '\n';
+    }
+
+    return 0;
 }
 
 ```
