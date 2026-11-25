@@ -3,5 +3,9 @@ using namespace std;
 
 int main() {
 	// your code goes here
+	int R;
+	cin>>R;
+	cout << (R == 2 ? 5 : 8 - R) << '\n';
+	return 0;
 
 }
