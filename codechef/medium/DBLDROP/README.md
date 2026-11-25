@@ -66,7 +66,7 @@ Output
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-11-25T15:09:39.864Z  
+**Submitted:** 2026-11-25T15:10:12.652Z  
 
 ```c_cpp
 #include <bits/stdc++.h>
@@ -74,7 +74,35 @@ using namespace std;
 
 int main() {
 	// your code goes here
+int T;
+    cin >> T;
 
+    while (T--) {
+        int N;
+        cin >> N;
+
+        vector<long long> A(N);
+        long long sum = 0;
+        long long maxA = 0;
+
+        for (long long &x : A) {
+            cin >> x;
+            sum += x;
+            maxA = max(maxA, x);
+        }
+
+        long long answer = sum - maxA;  // Use no operation
+
+        for (long long x : A) {
+            long long newSum = sum + x;
+            long long newMax = max(maxA, 2 * x);
+            answer = max(answer, newSum - newMax);
+        }
+
+        cout << answer << '\n';
+    }
+
+    return 0;
 }
 
 ```
