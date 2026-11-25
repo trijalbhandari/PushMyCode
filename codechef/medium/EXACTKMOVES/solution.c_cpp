@@ -3,5 +3,13 @@ using namespace std;
 
 int main() {
 	// your code goes here
+int T;
+cin>>T;
+while (T--){
+    int N,K;
+    cin>>N>>K;
+    cout << (K <= N && N <= 2 * K ? "YES" : "NO") << '\n';
+    }
 
+    return 0;
 }
